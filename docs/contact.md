@@ -24,7 +24,7 @@ I'm always interested in connecting with security professionals, researchers, an
 
 **GitHub**: [github.com/condortheraven](https://github.com/condortheraven)
 
-**LinkedIn**: [Add your LinkedIn profile here]
+**LinkedIn**: [LinkedIn profile (https://www.linkedin.com/in/c1l2r45/)
 
 **HackTheBox**: Hacker rank across multiple domains
 
