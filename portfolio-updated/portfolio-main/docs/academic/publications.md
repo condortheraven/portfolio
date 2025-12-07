@@ -12,6 +12,21 @@ BSc Criminology and Cybercrime final year dissertation examining location-based 
 
 ## Academic Essays & Papers
 
+### Forensic Linguistic Authorship Analysis (2024-2025)
+
+Comprehensive report examining forensic linguistic methodologies for determining authorship in digital communications and written documents. Analysis of linguistic patterns, stylometry techniques, and their application in criminal investigations and digital forensics contexts.
+
+**Key Themes**:
+- Stylometric analysis techniques
+- Linguistic fingerprinting methodologies
+- Application in criminal investigations
+- Digital forensics integration
+- Legal and evidentiary considerations
+
+**Achievement**: First-class mark (95%), recognised for methodological rigour and comprehensive analysis
+
+---
+
 ### IoT Security Vulnerabilities (2024)
 
 Comprehensive analysis of security vulnerabilities in Internet of Things ecosystems, examining:

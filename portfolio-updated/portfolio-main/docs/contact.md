@@ -12,13 +12,19 @@ I'm always interested in connecting with security professionals, researchers, an
 
 ---
 
+## Contact Information
+
+**Email**: calumjelrick@protonmail.com  
+**Phone**: +44(0)7475 346263  
+**Location**: Portsmouth / Leigh-on-Sea, UK
+
+---
+
 ## Professional Profiles
 
-**GitHub**: [github.com/yourhandle]  
-*Add your actual GitHub profile once you create one for this portfolio*
+**GitHub**: [github.com/condortheraven](https://github.com/condortheraven)
 
-**LinkedIn**: [linkedin.com/in/yourprofile]  
-*Add your LinkedIn profile*
+**LinkedIn**: [Add your LinkedIn profile here]
 
 **HackTheBox**: Hacker rank across multiple domains
 
@@ -27,7 +33,7 @@ I'm always interested in connecting with security professionals, researchers, an
 ## Current Status
 
 **Availability**: Graduating summer 2026  
-**Location**: Portsmouth, UK (willing to relocate)  
+**Location**: Portsmouth / Leigh-on-Sea, UK (willing to relocate)  
 **Clearance**: Eligible for SC/DV clearance (dual South African & British nationality)
 
 ---
@@ -47,6 +53,7 @@ I'm always interested in connecting with security professionals, researchers, an
 - IoT security
 - Criminology and cybersecurity intersection
 - Social engineering and human factors
+- Forensic linguistics
 
 ### Speaking & Presentations
 - Academic conferences
@@ -96,7 +103,3 @@ When contacting me:
 ## Social Media Policy
 
 I maintain a professional online presence focused on cybersecurity research and industry engagement. Content shared publicly is appropriate for professional audiences and potential employers.
-
----
-
-*This page will be updated with specific contact details once the site is live.*

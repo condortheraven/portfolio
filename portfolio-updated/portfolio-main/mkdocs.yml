@@ -1,10 +1,12 @@
-site_name: Calum's Cybersecurity Portfolio
+site_name: Calum Elrick
 site_url: https://quasarcat.co.za
-site_author: Calum
-site_description: Cybersecurity researcher and penetration tester specialising in offensive security and vulnerability research
+site_author: Calum Elrick
+site_description: Cybersecurity professional bridging technical security and criminal justice. Discovered CVE-2022-1386, a critical zero-day vulnerability.
 
 theme:
   name: material
+  favicon: assets/favicon.ico
+  logo: assets/logo.png
   palette:
     # Light mode
     - scheme: default
