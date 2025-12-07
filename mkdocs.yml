@@ -1,0 +1,58 @@
+site_name: Calum's Cybersecurity Portfolio
+site_url: https://quasarcat.co.za
+site_author: Calum
+site_description: Cybersecurity researcher and penetration tester specialising in offensive security and vulnerability research
+
+theme:
+  name: material
+  palette:
+    # Light mode
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+
+nav:
+  - Home: index.md
+  - About: about.md
+  - Research:
+    - CVE-2022-1386 Discovery: research/cve-2022-1386.md
+    - Entra Connect Security: research/entra-connect.md
+    - Dating App Location Privacy: research/dating-app-security.md
+  - Experience:
+    - Rootshell Security: experience/rootshell.md
+    - Reversec Internship: experience/reversec.md
+  - Academic Work:
+    - Dissertation: academic/dissertation.md
+    - Publications: academic/publications.md
+  - Contact: contact.md
