@@ -5,8 +5,6 @@ site_description: Cybersecurity professional bridging technical security and cri
 
 theme:
   name: material
-  favicon: assets/favicon.ico
-  logo: assets/logo.png
   palette:
     # Light mode
     - scheme: default
