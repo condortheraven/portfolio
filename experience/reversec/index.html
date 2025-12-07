@@ -1,0 +1,1716 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cybersecurity professional bridging technical security and criminal justice. Discovered CVE-2022-1386, a critical zero-day vulnerability.">
+      
+      
+        <meta name="author" content="Calum Elrick">
+      
+      
+        <link rel="canonical" href="https://quasarcat.co.za/experience/reversec/">
+      
+      
+        <link rel="prev" href="../rootshell/">
+      
+      
+        <link rel="next" href="../../academic/dissertation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Reversec Internship - Calum Elrick</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reversec-uk-ltd-security-research-internship" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Calum Elrick" class="md-header__button md-logo" aria-label="Calum Elrick" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Calum Elrick
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reversec Internship
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../research/cve-2022-1386/" class="md-tabs__link">
+          
+  
+  
+  Research
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../rootshell/" class="md-tabs__link">
+          
+  
+  
+  Experience
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../academic/dissertation/" class="md-tabs__link">
+          
+  
+  
+  Academic Work
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contact/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contact
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Calum Elrick" class="md-nav__button md-logo" aria-label="Calum Elrick" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Calum Elrick
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Research
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/cve-2022-1386/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CVE-2022-1386 Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/entra-connect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entra Connect Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/dating-app-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dating App Location Privacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Experience
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Experience
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rootshell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rootshell Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reversec Internship
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reversec Internship
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#internship-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Internship Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primary-research-focus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Research Focus
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Primary Research Focus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entra-connect-synchronisation-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entra Connect Synchronisation Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-research-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Research Outcomes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collaborative-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collaborative Research
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Collaborative Research">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#team-research-with-max" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Team Research with Max
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knowledge-sharing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Knowledge Sharing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Environment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technologies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attack-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attack Techniques
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skills-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skills Development
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Skills Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Research
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-identity-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud &amp; Identity Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#professional-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Professional Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research Impact
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Research Impact">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practical-security-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Security Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defensive-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defensive Understanding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#industry-knowledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Industry Knowledge
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-learnings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Learnings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Learnings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technical-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#professional-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Professional Growth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#research-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#career-relevance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Career Relevance
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Academic Work
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Academic Work
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../academic/dissertation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dissertation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../academic/publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#internship-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Internship Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primary-research-focus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Research Focus
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Primary Research Focus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entra-connect-synchronisation-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entra Connect Synchronisation Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-research-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Research Outcomes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collaborative-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collaborative Research
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Collaborative Research">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#team-research-with-max" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Team Research with Max
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knowledge-sharing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Knowledge Sharing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Environment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technologies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attack-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attack Techniques
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skills-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skills Development
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Skills Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Research
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-identity-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud &amp; Identity Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#professional-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Professional Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research Impact
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Research Impact">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practical-security-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Security Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defensive-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defensive Understanding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#industry-knowledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Industry Knowledge
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-learnings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Learnings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Learnings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technical-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#professional-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Professional Growth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#research-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#career-relevance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Career Relevance
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="reversec-uk-ltd-security-research-internship">Reversec UK Ltd - Security Research Internship</h1>
+<p><strong>Role</strong>: Security Research Intern<br />
+<strong>Duration</strong>: Summer 2025<br />
+<strong>Focus</strong>: Microsoft Entra Connect exploitation research</p>
+<h2 id="internship-overview">Internship Overview</h2>
+<p>Summer 2025 security research internship at Reversec UK Ltd, specialising in Microsoft Entra Connect (formerly Azure AD Connect) security analysis and exploitation technique development.</p>
+<h2 id="primary-research-focus">Primary Research Focus</h2>
+<h3 id="entra-connect-synchronisation-security">Entra Connect Synchronisation Security</h3>
+<p>Conducted in-depth research into the security implications of Microsoft's hybrid identity synchronisation platform:</p>
+<ul>
+<li>Analysed attack surface of Entra Connect infrastructure</li>
+<li>Developed exploitation techniques for credential extraction</li>
+<li>Documented comprehensive attack methodologies</li>
+<li>Created modern tooling to replace deprecated capabilities</li>
+</ul>
+<h3 id="key-research-outcomes">Key Research Outcomes</h3>
+<p><strong>MSOL Credential Extraction</strong>:
+- Successfully extracted Microsoft Online (MSOL) service account credentials from Entra Connect servers
+- Demonstrated privilege escalation paths from on-premises to cloud environments
+- Documented systematic extraction methodology for security testing</p>
+<p><strong>DCSync Attack Execution</strong>:
+- Performed DCSync attacks to obtain domain credentials
+- Demonstrated lateral movement opportunities in hybrid identity environments
+- Mapped attack chains from initial access to full domain compromise</p>
+<p><strong>Modern Tooling Development</strong>:
+- Created Graph API-based scripts replacing deprecated AADInternals functionality
+- Developed reliable, maintainable exploitation tools
+- Produced comprehensive technical documentation for security testing</p>
+<h2 id="collaborative-research">Collaborative Research</h2>
+<h3 id="team-research-with-max">Team Research with Max</h3>
+<p>Worked alongside research partner Max to:
+- Develop and validate attack techniques systematically
+- Create comprehensive attack path documentation
+- Build practical testing frameworks
+- Produce actionable security assessment guidance</p>
+<h3 id="knowledge-sharing">Knowledge Sharing</h3>
+<ul>
+<li>Documented findings for internal knowledge base</li>
+<li>Created step-by-step guides for reproduction</li>
+<li>Contributed to Reversec's technical capability development</li>
+<li>Supported ongoing research initiatives</li>
+</ul>
+<h2 id="technical-environment">Technical Environment</h2>
+<h3 id="technologies">Technologies</h3>
+<ul>
+<li>Microsoft Entra Connect / Azure AD Connect</li>
+<li>Active Directory Domain Services</li>
+<li>Microsoft Graph API</li>
+<li>Azure Active Directory / Entra ID</li>
+<li>PowerShell scripting and automation</li>
+<li>Windows Server infrastructure</li>
+</ul>
+<h3 id="attack-techniques">Attack Techniques</h3>
+<ul>
+<li>Credential dumping and extraction</li>
+<li>DCSync operations</li>
+<li>Privilege escalation</li>
+<li>Lateral movement</li>
+<li>Cloud tenant compromise</li>
+<li>Identity infrastructure exploitation</li>
+</ul>
+<h2 id="skills-development">Skills Development</h2>
+<h3 id="security-research">Security Research</h3>
+<ul>
+<li>Advanced exploitation technique development</li>
+<li>Security tool creation and scripting</li>
+<li>Systematic vulnerability analysis</li>
+<li>Technical documentation and methodology creation</li>
+</ul>
+<h3 id="cloud-identity-security">Cloud &amp; Identity Security</h3>
+<ul>
+<li>Hybrid identity architecture understanding</li>
+<li>Azure/Entra ID security mechanisms</li>
+<li>Active Directory attack paths</li>
+<li>Cloud tenant security implications</li>
+</ul>
+<h3 id="professional-practices">Professional Practices</h3>
+<ul>
+<li>Collaborative security research</li>
+<li>Version control and documentation</li>
+<li>Ethical research conduct</li>
+<li>Professional communication of findings</li>
+</ul>
+<h2 id="research-impact">Research Impact</h2>
+<p>This internship contributed to:</p>
+<h3 id="practical-security-testing">Practical Security Testing</h3>
+<ul>
+<li>Modern alternatives to deprecated tooling</li>
+<li>Reliable exploitation techniques for security assessments</li>
+<li>Comprehensive attack documentation for penetration testing</li>
+</ul>
+<h3 id="defensive-understanding">Defensive Understanding</h3>
+<ul>
+<li>Improved understanding of identity infrastructure risks</li>
+<li>Detection and prevention strategy development</li>
+<li>Security hardening recommendations</li>
+<li>Incident response preparation</li>
+</ul>
+<h3 id="industry-knowledge">Industry Knowledge</h3>
+<ul>
+<li>Contribution to hybrid identity security understanding</li>
+<li>Practical guidance for security practitioners</li>
+<li>Real-world attack path documentation</li>
+<li>Education on emerging threats</li>
+</ul>
+<h2 id="key-learnings">Key Learnings</h2>
+<h3 id="technical-insights">Technical Insights</h3>
+<ul>
+<li>Deep understanding of Entra Connect architecture and security</li>
+<li>Practical Graph API exploitation techniques</li>
+<li>Hybrid identity attack methodology</li>
+<li>Systematic approach to security research</li>
+</ul>
+<h3 id="professional-growth">Professional Growth</h3>
+<ul>
+<li>Collaborative research skills</li>
+<li>Technical writing and documentation</li>
+<li>Time management in research projects</li>
+<li>Stakeholder communication</li>
+</ul>
+<h3 id="research-process">Research Process</h3>
+<ul>
+<li>Structured approach to security research</li>
+<li>Tool development lifecycle</li>
+<li>Validation and testing methodologies</li>
+<li>Responsible disclosure considerations</li>
+</ul>
+<hr />
+<h2 id="research-context">Research Context</h2>
+<p>All research was conducted:
+- In controlled, authorised environments
+- For legitimate security research purposes
+- With appropriate ethical considerations
+- To improve defensive security capabilities</p>
+<p>Findings have been sanitised for appropriate public presentation while maintaining educational value.</p>
+<h2 id="career-relevance">Career Relevance</h2>
+<p>This internship directly supports career goals in:
+- Offensive security and penetration testing
+- Identity and access management security
+- Security research and tool development
+- Cloud and hybrid infrastructure security
+- Advanced threat analysis</p>
+<p>The experience builds upon previous work at Rootshell Security and complements academic research, creating a comprehensive security research portfolio.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
